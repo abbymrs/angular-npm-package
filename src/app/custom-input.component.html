@@ -1,0 +1,67 @@
+<div [ngClass]="inputContainerClasses">
+  <span class="universal-label big-label normal-color d-felx">
+    <i class="red" *ngIf="control.isRequired">*</i>
+    {{ control.placeholder || control.controlName }}
+  </span>
+  <ng-container
+    *ngIf="control.type !== 'textarea' && control.type !== 'calendar'"
+  >
+    <input
+      [required]="control.isRequired"
+      [disabled]="control.isDisabled"
+      [type]="control.type"
+      [email]="control.type === 'email'"
+      [name]="control.controlName"
+      [min]="control.minNumber"
+      [(ngModel)]="control.model"
+      [class]="control.className"
+      [pattern]="control.pattern"
+      (focus)="floatLable($event.target)"
+      (blur)="changInputStatus($event.target)"
+      (ngModelChange)="updateChanges()"
+    />
+  </ng-container>
+  <ng-container *ngIf="control.type === 'calendar'">
+    <input
+      class="calendar"
+      readonly
+      style="visibility: hidden"
+      [required]="control.isRequired"
+      [disabled]="control.isDisabled"
+      [type]="control.type"
+      [name]="control.controlName"
+      [(ngModel)]="control.model"
+      [class]="control.className"
+      (focus)="floatLable($event.target)"
+      (blur)="changInputStatus($event.target)"
+      (ngModelChange)="updateChanges()"
+    />
+    <p-calendar
+      (onBlur)="blurCalendar($event)"
+      [(ngModel)]="control.model"
+      (ngModelChange)="updateChanges()"
+      (onFocus)="focusCalendar($event)"
+      (onSelect)="selectCalendar()"
+      (onClose)="closeCalendar($event)"
+      [readonlyInput]="true"
+      [showTime]="control.isShowTime"
+      [disabled]="control.isDisabled"
+      [hideOnDateTimeSelect]="true"
+      [minDate]="control.minDate"
+    ></p-calendar>
+  </ng-container>
+  <ng-container *ngIf="control.type === 'textarea'">
+    <textarea
+      [required]="control.isRequired"
+      cols="30"
+      rows="5"
+      [name]="control.controlName"
+      [(ngModel)]="control.model"
+      [class]="control.className"
+      [pattern]="control.pattern"
+      (focus)="floatLable($event.target)"
+      (blur)="changInputStatus($event.target)"
+      (ngModelChange)="updateChanges()"
+    ></textarea>
+  </ng-container>
+</div>
