@@ -8,7 +8,7 @@ npm i -S custom-ng-input
 "styles": [
     "./node_modules/primeng/resources/themes/nova-light/theme.css",
     "./node_modules/primeng/resources/primeng.min.css",
-    "./node_modules/custom-input/custom-input.css",
+    "./node_modules/custom-ng-input/custom-ng-input.css",
     "src/styles.scss"
 ]
 ```
@@ -17,7 +17,7 @@ npm i -S custom-ng-input
 ```ts
 ...
 import { FormsModule } from '@angular/forms';
-import { CustomInputModule } from 'custom-input';
+import { CustomInputModule } from 'custom-ng-input';
 
 @NgModule({
     declarations: [AppComponent],
@@ -44,9 +44,9 @@ inputControl = {
     pattern: "w"
 };
 ```
-<h4>In app.component.html, use custom-input tag</h4>
+<h4>In app.component.html, use custom-ng-input tag</h4>
 ```html
-<custom-input
+<custom-ng-input
     [(ngModel)]="inputControl.model"
     [name]="inputControl.controlName"
     [control]="inputControl"
@@ -54,7 +54,7 @@ inputControl = {
     [email]="inputControl.type === 'email'"
     [pattern]="inputControl.pattern"
 >
-</custom-input>
+</custom-ng-input>
 ```
 <h4>Component Examples</h4>
 
@@ -71,14 +71,14 @@ inputControl = <inputItem>{
 };
 ```
 ```html
-<custom-input
+<custom-ng-input
   [(ngModel)]="inputControl.model"
   [name]="inputControl.controlName"
   [control]="inputControl"
   [required]="inputControl.isRequired"
   [email]="inputControl.type === 'email'"
   [pattern]="inputControl.pattern">
-</custom-input>
+</custom-ng-input>
 ```
 
 <h6>Textarea input</h6>
@@ -94,14 +94,14 @@ inputControl = <inputItem>{
 };
 ```
 ```html
-<custom-input
+<custom-ng-input
   [(ngModel)]="inputControl.model"
   [name]="inputControl.controlName"
   [control]="inputControl"
   [required]="inputControl.isRequired"
   [email]="inputControl.type === 'email'"
   [pattern]="inputControl.pattern">
-</custom-input>
+</custom-ng-input>
 ```
 
 <h6>Email input</h6>
@@ -117,14 +117,14 @@ inputControl = <inputItem>{
 };
 ```
 ```html
-<custom-input
+<custom-ng-input
   [(ngModel)]="inputControl.model"
   [name]="inputControl.controlName"
   [control]="inputControl"
   [required]="inputControl.isRequired"
   [email]="inputControl.type === 'email'"
   [pattern]="inputControl.pattern">
-</custom-input>
+</custom-ng-input>
 ```
 
 <h6>Number input</h6>
@@ -142,14 +142,14 @@ isIntegerOnly: true // if allow float number, just remove this field
 };
 ```
 ```html
-<custom-input
+<custom-ng-input
 [(ngModel)]="inputControl.model"
 [name]="inputControl.controlName"
 [control]="inputControl"
 [required]="inputControl.isRequired"
 [email]="inputControl.type === 'email'"
 [pattern]="inputControl.pattern">
-</custom-input>
+</custom-ng-input>
 ```
 
 <h6>Datepicker</h6>
@@ -164,12 +164,12 @@ isRequired: true
 };
 ```
 ```html
-<custom-input
+<custom-ng-input
 [(ngModel)]="inputControl.model"
 [name]="inputControl.controlName"
 [control]="inputControl"
 [required]="inputControl.isRequired"
 [email]="inputControl.type === 'email'"
 [pattern]="inputControl.pattern">
-</custom-input>
+</custom-ng-input>
 ```

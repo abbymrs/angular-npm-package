@@ -4,7 +4,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
 import { CalendarModule } from "primeng/calendar";
-import { CustomInputComponent } from './custom-input.component';
+import { CustomInputComponent } from './custom-ng-input.component';
 
 @NgModule({
   declarations: [

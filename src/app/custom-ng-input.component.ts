@@ -12,9 +12,9 @@ import { inputItem } from "./input.model";
 import { UtilService } from "./util.service";
 
 @Component({
-  selector: "custom-input",
-  templateUrl: "./custom-input.component.html",
-  styleUrls: ["./custom-input.component.scss"],
+  selector: "custom-ng-input",
+  templateUrl: "./custom-ng-input.component.html",
+  styleUrls: ["./custom-ng-input.component.scss"],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

@@ -1,13 +1,13 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
-  "name": "custom-input",
-  "version": "0.0.4",
+  "name": "custom-ng-input",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port=4205",
     "clear": "rm -rf ./dist",
     "build": "npm run clear && ng-packagr -p package.json",
-    "postbuild": "node-sass ./src/styles.scss ./dist/custom-input.css",
+    "postbuild": "node-sass ./src/styles.scss ./dist/custom-ng-input.css",
     "publish": "npm run build && npm publish dist",
     "test": "ng test",
     "lint": "ng lint",
